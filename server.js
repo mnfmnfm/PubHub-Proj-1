@@ -3,9 +3,6 @@ var express = require('express'),
 var db = require("./models")
 var controllers = require('./controllers');
 
-// Configure templates to be served with EJS
-app.set("view engine", "ejs");
-
 app.get('/api', controllers.api.index);
 // Create route for html to be shown
 app.get('/', function homepage(req, res) {
