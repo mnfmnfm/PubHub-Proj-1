@@ -17,7 +17,13 @@ function show(req,res){
       console.log("show error" + err);
       res.sendStatus(500);
     }
-    res.send(foundPubHub);
+    db.Reviews.find({pubHubId: req.params.id}, function(err, foundReviews) {
+      // Remove any previous reviews field leftover in the database
+      delete(foundPubHub._doc.reviews);
+      // Combine the found reviews with the PubHub.
+      let ans = Object.assign({reviews: foundReviews}, foundPubHub._doc)
+      res.send(ans);
+    });
   });
 }
 
