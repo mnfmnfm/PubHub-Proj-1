@@ -104,15 +104,15 @@ $(document).ready(function() {
       <h4>${currentPubHub.streetAddress}</h4>
       `);
     $("#reviewsTitle").append(reviewTitleHtml);
-    };
+  };
 
-    //Update title based off of review you click
-    function renderReviewImage(currentPubHubImage) {
-      var reviewImageHtml = (`
-        <img src="${currentPubHubImage.photo}">
-        `);
+  //Update title based off of review you click
+  function renderReviewImage(currentPubHubImage) {
+    var reviewImageHtml = (`
+      <img src="${currentPubHubImage.photo}">
+      `);
       $(".reviewImage").append(reviewImageHtml);
-      };
+  };
 
   //Step 1a, part 3 of 3:
   function renderReview(review) {
@@ -142,10 +142,10 @@ $(document).ready(function() {
       </div>
       </div>
       </div>
-      <!-- END review form -->`);
-      $("#review-form").append(reviewHtml);
-      $('#review-form').find('.editReview').last().on("click", function() {
-        $('#edit-review-modal').data('review-id', $(this).data('review-id'));
-      });
-    }
-  });
+    <!-- END review form -->`);
+    $("#review-form").append(reviewHtml);
+    $('#review-form').find('.editReview').last().on("click", function() {
+      $('#edit-review-modal').data('review-id', $(this).data('review-id'));
+    });
+  }
+});
