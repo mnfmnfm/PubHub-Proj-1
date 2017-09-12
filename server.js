@@ -28,25 +28,25 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/api/pubHub', controllers.pubHub.index);
+app.get('/api/pubHubs', controllers.pubHub.index);
 
 
-app.get('/api/pubHub/:id', controllers.pubHub.show);
+app.get('/api/pubHubs/:id', controllers.pubHub.show);
 
-app.post('/api/pubHub', controllers.pubHub.create);
+app.post('/api/pubHubs', controllers.pubHub.create);
 
-app.put('/api/pubHub/:id', controllers.pubHub.update);
+app.put('/api/pubHubs/:id', controllers.pubHub.update);
 
-app.delete('/api/pubHub/:id', controllers.pubHub.destroy);
+app.delete('/api/pubHubs/:id', controllers.pubHub.destroy);
 
 //Routes for review page
-app.get('/api/pubHub/:pubHubId/reviews', controllers.review.index);
+app.get('/api/pubHubs/:pubHubId/reviews', controllers.review.index);
 
-app.post('/api/pubHub/:pubHubId/reviews', controllers.review.create);
+app.post('/api/pubHubs/:pubHubId/reviews', controllers.review.create);
 
-app.put('/api/pubHub/:pubHubId/reviews/:id', controllers.review.update);
+app.put('/api/pubHubs/:pubHubId/reviews/:id', controllers.review.update);
 
-app.delete('/api/pubHub/:pubHubId/reviews/:id', controllers.review.destroy);
+app.delete('/api/pubHubs/:pubHubId/reviews/:id', controllers.review.destroy);
 
 app.listen(process.env.PORT || 4000, function () {
   console.log('Express server is up and running on http://localhost:4000');

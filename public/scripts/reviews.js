@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   $.ajax({
     method: 'GET',
-    url: '/api/pubHub/' + pubHubId + '/reviews',
+    url: '/api/pubHubs/' + pubHubId + '/reviews',
     success: renderReviews,
     error: handleError
   });
@@ -17,7 +17,7 @@ $(document).ready(function() {
   //AJAX call that GETS all existing PubHubs in the DB and calls the render function
   $.ajax({
     method: 'GET',
-    url:'/api/pubHub/' + pubHubId,
+    url:'/api/pubHubs/' + pubHubId,
     success: function(data) {
       renderReviewTitle(data);
       renderReviewImage(data);
@@ -29,7 +29,7 @@ $(document).ready(function() {
     event.preventDefault();
     $.ajax({
       method: 'POST',
-      url: '/api/pubHub/' + pubHubId + '/reviews',
+      url: '/api/pubHubs/' + pubHubId + '/reviews',
       data: $(this).serialize(),
       success: renderReview,
       error: handleError
@@ -41,7 +41,7 @@ $(document).ready(function() {
     e.preventDefault();
     $.ajax({
       method: "PUT",
-      url: '/api/pubHub/' + pubHubId + '/reviews/' + id,
+      url: '/api/pubHubs/' + pubHubId + '/reviews/' + id,
       data: $(form).serialize(),
       success: handleUpdatedReview,
       error: handleError
