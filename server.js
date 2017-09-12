@@ -40,13 +40,13 @@ app.put('/api/pubHub/:id', controllers.pubHub.update);
 app.delete('/api/pubHub/:id', controllers.pubHub.destroy);
 
 //Routes for review page
-app.get('/api/pubHub/:pubHubId/reviews', controllers.reviews.index);
+app.get('/api/pubHub/:pubHubId/reviews', controllers.review.index);
 
-app.post('/api/pubHub/:pubHubId/reviews', controllers.reviews.create);
+app.post('/api/pubHub/:pubHubId/reviews', controllers.review.create);
 
-app.put('/api/pubHub/:pubHubId/reviews/:id', controllers.reviews.update);
+app.put('/api/pubHub/:pubHubId/reviews/:id', controllers.review.update);
 
-app.delete('/api/pubHub/:pubHubId/reviews/:id', controllers.reviews.destroy);
+app.delete('/api/pubHub/:pubHubId/reviews/:id', controllers.review.destroy);
 
 app.listen(process.env.PORT || 4000, function () {
   console.log('Express server is up and running on http://localhost:4000');
